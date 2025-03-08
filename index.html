@@ -1370,7 +1370,7 @@
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
-        <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" > -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
         <img src="/img/whatsapp.png" class="whatsapp" style="height: 90px;">   
 
         </button>
@@ -1383,6 +1383,17 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script>
+        const cardContent = document.querySelector('.card__content--container');
+
+            cardContent.addEventListener('mouseenter', () => {
+                const height = cardContent.offsetHeight;
+                cardContent.style.height = `${height * 1.52}px`; 
+            });
+
+            cardContent.addEventListener('mouseleave', () => {
+                cardContent.style.height = '10px';  
+            });
+
          function openGoogleMap() {
             let latitude = 40.748817;  
             let longitude = -73.985428;  
@@ -1411,7 +1422,6 @@
         document.getElementById('location').addEventListener('click', openGoogleMap);
         window.onload = sendWhatsAppMessage;
     </script>
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
     </body>
 
