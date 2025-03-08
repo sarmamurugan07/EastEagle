@@ -1,0 +1,177 @@
+
+<div style="display: flex;">
+<article class="card">
+    <img
+      class="card__background"
+      src="/img/fire-fighting.png"
+      alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+      width="1920"
+      height="2193"
+    />
+    <div class="card__content">
+      <div class="card__content--container">
+        <h2 class="card__title">Colombia</h2>
+        <p class="card__description">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
+          labore laudantium deserunt fugiat numquam.
+        </p>
+      </div>
+      <button class="card__button">Read more</button>
+    </div>
+  </article>
+  <article class="card">
+    <img
+      class="card__background"
+      src="/img/fire-fighting.png"
+      alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+      width="1920"
+      height="2193"
+    />
+    <div class="card__content">
+      <div class="card__content--container">
+        <h2 class="card__title --white">Colombia</h2>
+        <p class="card__description">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
+          labore laudantium deserunt fugiat numquam.
+        </p>
+      </div>
+      <button class="card__button">Read more</button>
+    </div>
+  </article>
+</div>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap");
+  
+
+  
+    h2 {
+      font-size: 2.25rem;
+      font-family: var(--font-title);
+      color: var(--white);
+      line-height: 1.1;
+    }
+  
+    p {
+      font-family: var(--font-text);
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--white);
+    }
+  
+    .card {
+      display: grid;
+      place-items: center;
+      width: 80vw;
+      max-width: 21.875rem;
+      height: 28.125rem;
+      overflow: hidden;
+      border-radius: 0.625rem;
+      box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+      position: relative;
+    }
+  
+    .card__background {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      transition: transform 500ms ease-in-out;
+    }
+  
+    .card__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: 12% 1.25rem 1.875rem;
+      background: linear-gradient(
+        180deg,
+        hsla(0, 0%, 0%, 0) 0%,
+        hsla(0, 0%, 0%, 0.3) 10%,
+        hsl(0, 0%, 0%) 100%
+      );
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 50%;
+      transition: transform 500ms ease-out;
+    }
+  
+    .card__title {
+      position: relative;
+      font-family: var(--font-title);
+      font-size: 2.25rem;
+      color: var(--white);
+      width: fit-content;
+    }
+  
+    .card__title::after {
+      content: "";
+      position: absolute;
+      height: 0.3125rem;
+      width: calc(100% + 1.25rem);
+      bottom: calc((1.25rem - 0.5rem) * -1);
+      left: -1.25rem;
+      background-color: var(--brand-color);
+      transition: opacity 500ms ease-in, transform 500ms ease-out;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  
+    .card__button {
+      padding: 0.75em 1.6em;
+      font-variant: small-caps;
+      font-weight: bold;
+      border-radius: 0.45em;
+      border: none;
+      background-color: var(--brand-color);
+      font-family: var(--font-title);
+      font-size: 1.125rem;
+      color: var(--black);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 500ms ease-in, transform 500ms ease-out;
+    }
+  
+    .card:hover .card__content {
+      transform: translateY(0);
+    }
+  
+    .card:hover .card__background {
+      transform: scale(1.1);
+    }
+  
+    .card:hover .card__title::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  
+    .card:hover .card__button {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    /* Media Queries */
+    @media (any-hover: hover) and (any-pointer: fine) {
+      .card:hover,
+      .card:focus-within {
+        transform: scale(1.05);
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .card {
+        width: 90vw;
+        height: auto;
+      }
+  
+      .card__content {
+        height: auto;
+        padding: 10%;
+      }
+  
+      .card__title {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+  
