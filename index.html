@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Ease Eeagle</title>
+        <title>East Eagle</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -78,8 +78,8 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav mx-auto py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <a href="/" class="nav-item nav-link active">Home</a>
+                            <a href="#" id="about-link" class="nav-item nav-link ">About</a>
                             <!-- <a href="service.html" class="nav-item nav-link">Service</a> -->
                             <!-- <a href="blog.html" class="nav-item nav-link">Blog</a> -->
                             
@@ -1286,7 +1286,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">Message</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" id="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="mb-3">
@@ -1423,14 +1423,23 @@
         }
         function closeMessage()
         {
-            
             let name = document.getElementById('InputName').value;
             let description = document.getElementById('floatingTextarea').value;
-            name.value='';
-            description.value='';
+            name='';
+            floatingTextarea='';
+            InputName.value='';
+            floatingTextarea.value='';
         }
         let phoneNumber = "96878036914";
-        
+        document.addEventListener('DOMContentLoaded', function () {
+            const aboutLink = document.getElementById('about-link');
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            aboutLink.href = 'about.html';  
+            } else {
+            aboutLink.href = 'https://www.easteagleii.com/about'; 
+            }
+            console.log('Link href:', aboutLink.href);
+        });  
         function sendWhatsAppMessage() {
         let name = document.getElementById('InputName').value;
         let description = document.getElementById('floatingTextarea').value;
@@ -1440,6 +1449,7 @@
         }
         document.getElementById('send-message').addEventListener('click', sendWhatsAppMessage);
         document.getElementById('close-message').addEventListener('click', closeMessage);
+        document.getElementById('btn-close').addEventListener('click', closeMessage);
         document.getElementById('location').addEventListener('click', openGoogleMap);
         window.onload = sendWhatsAppMessage;
     </script>
