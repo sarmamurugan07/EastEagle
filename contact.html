@@ -389,7 +389,6 @@
     })();
 
     document.addEventListener("DOMContentLoaded", function () {
-        debugger;
         const form = document.getElementById("email-form");
 
         // Check if the form exists
@@ -419,7 +418,7 @@
             contactNumberField.value = (Math.random() * 100000) | 0; 
         }
 
-        form.addEventListener("submit", function (event) {debugger;
+        form.addEventListener("submit", function (event) {
             event.preventDefault();
 
             // Set the contact_number as random again when submitting
